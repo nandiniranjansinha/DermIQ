@@ -1,0 +1,28 @@
+# Virtual Environment
+venv/
+
+# Data files (too large for GitHub)
+data/raw/
+data/processed/
+
+# Trained model (too large for GitHub)
+models/*.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
