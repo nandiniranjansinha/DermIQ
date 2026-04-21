@@ -30,29 +30,30 @@
 DermIQ/
 │
 ├── app/
-│   └── streamlit_app.py        ← Main web application
+│   └── streamlit_app.py              ← Main web application
 │
 ├── data/
-│   ├── raw/                    ← Original Sephora dataset (not tracked)
-│   ├── processed/              ← Cleaned & feature-engineered data (not tracked)
-│   └── knowledge_base/         ← Ingredient category definitions
+│   ├── raw/                          ← Original Sephora dataset (not tracked)
+│   ├── processed/                    ← Cleaned & feature-engineered data (not tracked)
+│   └── knowledge_base/               ← Ingredient category definitions
 │
 ├── notebooks/
-│   ├── 01_data_exploration.ipynb       ← EDA on Sephora dataset
-│   ├── 02_preprocessing.ipynb          ← Data cleaning & parsing
-│   ├── 03_knowledge_base.ipynb         ← Building ingredient knowledge base
-│   └── 04_feature_engineering.ipynb   ← Feature creation & label engineering
+│   ├── 01_data_exploration.ipynb     ← EDA on Sephora dataset
+│   ├── 02_preprocessing.ipynb        ← Data cleaning & parsing
+│   ├── 03_knowledge_base.ipynb       ← Building ingredient knowledge base
+│   ├── 04_feature_engineering.ipynb  ← Feature creation & label engineering
+│   └── 05_model_training.ipynb       ← Model training & evaluation
 │
 ├── src/
-│   ├── preprocessing.py        ← Data cleaning functions
-│   ├── features.py             ← Feature engineering functions
-│   ├── model.py                ← Training and prediction logic
-│   └── similarity.py          ← Ingredient similarity search (v2)
+│   ├── preprocessing.py              ← Data cleaning functions
+│   ├── features.py                   ← Feature engineering functions
+│   ├── model.py                      ← Training and prediction logic
+│   └── similarity.py                 ← Ingredient similarity search (v2)
 │
-├── models/                     ← Saved trained models (not tracked)
-├── tests/                      ← Unit tests
+├── models/                           ← Saved trained models (not tracked)
+├── tests/                            ← Unit tests
 ├── requirements.txt
-├── setup_project.py            ← Project skeleton setup script
+├── setup_project.py                  ← Project skeleton setup script
 └── README.md
 ```
 
@@ -114,7 +115,7 @@ Streamlit Web App + OCR Image Upload
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/DermIQ.git
+git clone https://github.com/nandiniranjansinha/DermIQ.git
 cd DermIQ
 
 # Create virtual environment
@@ -144,6 +145,7 @@ Run the notebooks in order:
 02_preprocessing.ipynb
 03_knowledge_base.ipynb
 04_feature_engineering.ipynb
+05_model_training.ipynb
 ```
 
 ---
@@ -209,6 +211,7 @@ Run the notebooks in order:
 - [ ] Address class imbalance with SMOTE
 - [ ] TF-IDF vectorization on full ingredient text
 - [ ] Ingredient similarity search (NLP)
+- [ ] SHAP explainability layer
 - [ ] Deploy on Streamlit Cloud
 - [ ] Expand knowledge base
 
@@ -225,6 +228,9 @@ Run the notebooks in order:
 ## 👩‍💻 Author
 
 **Nandini Ranjan Sinha**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/nandiniranjansinha)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat-square&logo=github)](https://github.com/nandiniranjansinha)
 
 ---
 
