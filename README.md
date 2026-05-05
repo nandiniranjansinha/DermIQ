@@ -34,26 +34,24 @@ DermIQ/
 │
 ├── data/
 │   ├── raw/                          ← Original Sephora dataset (not tracked)
-│   ├── processed/                    ← Cleaned & feature-engineered data (not tracked)
-│   └── knowledge_base/               ← Ingredient category definitions
+│   └── processed/                    ← Cleaned & feature-engineered data (not tracked)
 │
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb     ← EDA on Sephora dataset
-│   ├── 02_preprocessing.ipynb        ← Data cleaning & parsing
+│   ├── 02_data_preprocessing.ipynb   ← Data cleaning & parsing
 │   ├── 03_knowledge_base.ipynb       ← Building ingredient knowledge base
 │   ├── 04_feature_engineering.ipynb  ← Feature creation & label engineering
 │   └── 05_model_training.ipynb       ← Model training & evaluation
 │
 ├── src/
 │   ├── preprocessing.py              ← Data cleaning functions
-│   ├── features.py                   ← Feature engineering functions
-│   ├── model.py                      ← Training and prediction logic
-│   └── similarity.py                 ← Ingredient similarity search (v2)
+│   ├── features.py                   ← Feature engineering & knowledge base
+│   └── model.py                      ← Training and prediction logic
 │
 ├── models/                           ← Saved trained models (not tracked)
-├── tests/                            ← Unit tests
+├── tests/
+│   └── test_preprocessing.py         ← Unit tests for preprocessing
 ├── requirements.txt
-├── setup_project.py                  ← Project skeleton setup script
 └── README.md
 ```
 
@@ -114,20 +112,13 @@ Streamlit Web App + OCR Image Upload
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/nandiniranjansinha/DermIQ.git
 cd DermIQ
 
-# Create virtual environment
 py -3.10 -m venv venv
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
 
-# Activate (Windows)
-venv\Scripts\activate
-
-# Activate (Mac/Linux)
-source venv/bin/activate
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
@@ -142,7 +133,7 @@ streamlit run app/streamlit_app.py
 Run the notebooks in order:
 ```
 01_data_exploration.ipynb
-02_preprocessing.ipynb
+02_data_preprocessing.ipynb
 03_knowledge_base.ipynb
 04_feature_engineering.ipynb
 05_model_training.ipynb
@@ -160,7 +151,7 @@ Run the notebooks in order:
 | Test samples | 458 (20%) |
 | Input features | 13 engineered features |
 | Output labels | `is_for_dry_skin`, `is_for_oily_skin`, `is_good_for_acne`, `is_fragrance_free` |
-| Overall accuracy | ~80–88% depending on label |
+| Accuracy | 80–90% per label (class imbalance noted) |
 
 ### Feature List
 
@@ -191,9 +182,9 @@ Run the notebooks in order:
 | Scikit-learn | ML model training & evaluation |
 | Streamlit | Web application framework |
 | Pytesseract | OCR for ingredient label photos |
-| Pillow | Image preprocessing |
+| Pillow | Image preprocessing (contrast, sharpness, resize) |
 | Matplotlib & Seaborn | Data visualization |
-| Regex | Ingredient text parsing |
+| Regex | Smart ingredient text parsing |
 | ast.literal_eval | Parsing list-formatted strings from CSV |
 
 ---
@@ -208,10 +199,10 @@ Run the notebooks in order:
 - [x] Streamlit web app
 - [x] OCR image upload
 - [x] Skin profile quiz
+- [x] Unit tests
 - [ ] Address class imbalance with SMOTE
-- [ ] TF-IDF vectorization on full ingredient text
-- [ ] Ingredient similarity search (NLP)
 - [ ] SHAP explainability layer
+- [ ] Ingredient similarity search (NLP)
 - [ ] Deploy on Streamlit Cloud
 - [ ] Expand knowledge base
 
@@ -219,9 +210,9 @@ Run the notebooks in order:
 
 ## ⚠️ Known Limitations
 
-- The ML model has class imbalance — minority class recall is lower than majority class. This is a known limitation to be addressed in v2 with SMOTE oversampling.
-- OCR accuracy depends heavily on image quality. Works best with flat, well-lit, cropped label photos.
-- Knowledge base covers common ingredients — rare or proprietary ingredients may not be flagged.
+- Class imbalance — minority class recall is lower than majority. To be addressed in v2 with SMOTE.
+- OCR accuracy depends on image quality. Works best with flat, well-lit, cropped label photos.
+- Knowledge base covers common ingredients — rare or proprietary compounds may not be flagged.
 
 ---
 
@@ -236,7 +227,7 @@ Run the notebooks in order:
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
