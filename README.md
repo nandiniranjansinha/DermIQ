@@ -200,10 +200,10 @@ Run the notebooks in order:
 - [x] OCR image upload
 - [x] Skin profile quiz
 - [x] Unit tests
+- [x] Deploy on Streamlit Cloud
 - [ ] Address class imbalance with SMOTE
 - [ ] SHAP explainability layer
 - [ ] Ingredient similarity search (NLP)
-- [ ] Deploy on Streamlit Cloud
 - [ ] Expand knowledge base
 
 ---
