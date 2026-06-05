@@ -9,7 +9,9 @@
 ![Dataset](https://img.shields.io/badge/Dataset-Sephora-pink?style=flat-square)
 
 ---
-
+## Live Demo
+[DermIQ - Skincare Analyzer](https://derm--iq.streamlit.app)
+---
 ## 📌 Overview
 
 **DermIQ** is an end-to-end Machine Learning application that analyzes skincare product ingredients and provides personalized safety insights. Users can either paste an ingredient list or upload a photo of a product label — DermIQ does the rest.
