@@ -63,3 +63,27 @@ A short quiz captures the user's skin type, concerns, known allergies, sensitivi
 - ✅ ML-based skin-type suitability prediction (4 labels)
 - ✅ Quiz-based personalized compatibility scoring
 - ✅ Streamlit web app, publicly deployed
+
+## 8. Growth & Metrics (Post-Launch Addition)
+
+### 8.1 North Star Metric
+**% of users who return to analyze a second product within 30 days.**
+
+This was chosen over two other candidates after evaluating trade-offs:
+- *Number of safety-score analyses per week* — rejected. Measures raw activity, not trust. A first-time user trying the tool out of curiosity is indistinguishable from a user who found real value in it; the metric can't separate one-off engagement from genuine retention.
+- *Number of purchase decisions influenced by a safety score* — rejected as currently unmeasurable. DermIQ has no instrumentation to track whether a user's purchase was actually informed by their score, without adding tracking infrastructure that doesn't exist in v1.
+- **30-day return-to-analyze** was selected as the best available proxy for real value delivery: a user only comes back to analyze a *second* product if the first score felt trustworthy and useful enough to act on. The 30-day window is deliberately wider than a weekly cadence, since skincare purchase and usage cycles don't repeat every 7 days — a shorter window would undercount genuine retention, while 30 days captures a realistic return cycle without being long enough to become meaningless as a signal.
+
+### 8.2 AARRR Funnel Mapping
+
+| Stage | Applied to DermIQ |
+|---|---|
+| **Acquisition** | User discovers DermIQ and signs up, driven by the core insight that ingredient labels are effectively unreadable to the average consumer. |
+| **Activation** | User uploads or scans an ingredient list (OCR or manual input) and receives their first safety score — the moment they experience the product's core value. |
+| **Retention** | User returns to analyze additional products over time, rather than a single one-off use — the critical signal, since a product can gain strong early signup volume and still fail if usage doesn't persist. |
+| **Referral** | User shares DermIQ with others. Potential mechanisms: referral-unlocked extra analyses, or separate profiles for family members. |
+| **Revenue** | Long-term monetization depends on sustained retention and referral trends, not early growth alone — a stable or increasing usage trend would inform whether to invest further in features, publicity, or a monetization path. |
+
+### 8.3 Known Gap
+v1 has no user accounts or saved history (see Non-Goals, Section 3), meaning the 30-day return metric cannot currently be measured without adding basic session/user tracking — flagged here as an open dependency, not something achievable within the current scope.
+
