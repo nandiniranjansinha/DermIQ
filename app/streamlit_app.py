@@ -408,6 +408,7 @@ quiz = {
 # ── Main App ───────────────────────────────────────────────────────────────
 st.title("🌸 DermIQ")
 st.markdown("Upload a product label or paste ingredients for an instant analysis.")
+st.caption("DermIQ is a guide, not medical advice. For skin conditions, please see a dermatologist.")
 
 tab1, tab2 = st.tabs(["✍️ Paste Ingredients", "📷 Upload Label Photo"])
 
